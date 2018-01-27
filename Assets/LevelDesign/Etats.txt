@@ -1,0 +1,24 @@
+A	| B	| C	|| Result
+0	| 0 	| 0	|| 1-a) Dort/Marche Lentement
+0	| 0 	| 1	|| 2-a) Courage	b) 
+0	| 1 	| 0	|| 3-a)
+0	| 1 	| 1	|| 4-a)	
+1	| 0 	| 0	|| 5-a)
+1	| 0 	| 1	|| 6-a)
+1	| 1 	| 0	|| 7-a)
+1	| 1	| 1	|| 8-a)
+
+
+Rien (Dort/Marche Lentement/Aucune initiative)
+
+Courage = Tombe correctement (Sexe Opposé Isolé = Absorbé)
+Peur = Marche lentement en s'accroupissant (Caïd = La perte/mort)	/ 	Court dans tout les sens, (Fuit les spots)
+Zombie = Marche lentement en ignorant ce qui se passe (Tombé = La mort => On tombe mal)	/	Rampe
+
+Courage + Peur = Bipolaire/Sadomaso, peut marcher sur les Débris (1 fois)
+Peur + Zombie = S'agrippe aux entités passant à proximité (Lampe = Il reste accroché)
+Courage + Zombie = Court et Bouscule/casse (Rencontre d'un perso ayant le même état = Combat => Perte)
+
+Courage + Peur + Zombie = Escalade puis tombe (Ne dois pas rencontré de fenetre)
+
+Obstacles : Fossé, Mur, Barrière, Porte (fermée?), Sexe opposé, Caïd, Débris (Verres?), Lampes (trop bas)
