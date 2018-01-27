@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class BrainZombie : BrainAbstract
 {
+    public override void CollisionEndDelegate(Collision2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void CollisionEnterDelegate(Collision2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void Plug(CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
         throw new System.NotImplementedException();
