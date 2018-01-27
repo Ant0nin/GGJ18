@@ -26,7 +26,7 @@ public class BrainNeutral : BrainAbstract
             rb.velocity = Vector2.right * speed + Physics2D.gravity;
         }
     }
-
+    
     protected void changeWalkDir(CharacterAI ai)
     {
         goLeft = !goLeft;
@@ -45,16 +45,17 @@ public class BrainNeutral : BrainAbstract
 
     }
 
-    public override void Plug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
-    {
-        
-    }
 
     public override void TriggerEndDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
     }
 
     public override void Unplug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
+    {
+        
+    }
+
+    public override void Plug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
         
     }

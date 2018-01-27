@@ -7,6 +7,12 @@ public class CharacterAI : MonoBehaviour {
     [SerializeField]
     CharacterState state = CharacterState.NEUTRAL;
 
+    public readonly static Vector2 bcSizeStand = new Vector2(3.714237f, 9.732243f);
+    public readonly static Vector2 bcOffsetStand = new Vector2(-0.1036626f, 0.3471451f);
+
+    public readonly static Vector2 bcSizeCrouch = new Vector2(9.732243f, 3.714237f);
+    public readonly static Vector2 bcOffsetCrouch = new Vector2(-0.1036626f, -0.50000f);
+
     SpriteRenderer sprRender;
     Rigidbody2D rb;
     Animator anim;
