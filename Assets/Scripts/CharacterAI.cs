@@ -11,7 +11,7 @@ public class CharacterAI : MonoBehaviour {
     Rigidbody2D rb;
     Animator anim;
     BrainAbstract brain;
-    BrainMapping store;
+    GeneralMapping store;
     AudioSource audioSrc;
 
     public CharacterState State
@@ -33,7 +33,7 @@ public class CharacterAI : MonoBehaviour {
 
     void Start()
     {
-        store = BrainMapping.GetInstance();
+        store = GeneralMapping.GetInstance();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprRender = GetComponent<SpriteRenderer>();

@@ -3,17 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 // singleton
-public class BrainMapping
+public class GeneralMapping
 {
-    private static BrainMapping instance;
-    public static BrainMapping GetInstance()
+    private static GeneralMapping instance;
+    public static GeneralMapping GetInstance()
     {
         if(instance == null)
-            instance = new BrainMapping();
+            instance = new GeneralMapping();
         return instance;
     }
 
-    private BrainMapping()
+    private GeneralMapping()
     {
         GenerateBrainStore();
         GenerateColorMapping();
