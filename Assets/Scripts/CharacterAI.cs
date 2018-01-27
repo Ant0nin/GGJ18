@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class CharacterAI : MonoBehaviour {
 
-    private Rigidbody2D rb;
-    private Animator anim;
+    [SerializeField]
+    CharacterState state;
+
+    Rigidbody2D rb;
+    Animator anim;
+
+    public CharacterState State
+    {
+        get { return state; }
+        set {
+            // TODO: switch character brain
+            state = value;
+        }
+    }
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
