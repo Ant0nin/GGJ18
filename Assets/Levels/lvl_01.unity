@@ -1195,7 +1195,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.17616564, y: -0.0045170784}
@@ -1212,6 +1212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec8eac09c75a7242999d6a414bb330f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycastMaxIter: 5
+  raycastMaxDist: Infinity
 --- !u!212 &1810349835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1488,7 +1490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2106539839}
   - component: {fileID: 2106539840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mirror_Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
