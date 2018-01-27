@@ -28,10 +28,11 @@ public class RaycastManager : MonoBehaviour {
             {
                 GameObject go = hit.collider.gameObject;
                 CharacterAI ai = go.GetComponent<CharacterAI>();
-                CharacterState refreshedState = ai.State | ((CharacterState)s.effect);
+                //CharacterState refreshedState = ai.State | ((CharacterState)s.effect); //!\ TODO: light combinaisons
+                CharacterState refreshedState = ((CharacterState)s.effect);
                 tempBase[ai] = refreshedState;
             }
-        } 
+        }
 
         foreach(KeyValuePair<CharacterAI, CharacterState> entry in tempBase)
         {
