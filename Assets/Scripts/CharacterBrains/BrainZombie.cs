@@ -18,12 +18,10 @@ public class BrainZombie : BrainAbstract
 
     public override void TriggerEndDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
-        throw new System.NotImplementedException();
     }
 
     public override void TriggerEnterDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
-        throw new System.NotImplementedException();
     }
 
     public override void Unplug(CharacterAI ai, Rigidbody2D rb, Animator anim)

@@ -17,6 +17,7 @@ public class BrainMapping
     {
         GenerateBrainStore();
         GenerateColorMapping();
+        GenerateSoundMapping();
     }
 
     public BrainAbstract GetBrain(CharacterState cs)
@@ -27,6 +28,11 @@ public class BrainMapping
     public Color GetColor(CharacterState cs)
     {
         return colorMapping[cs];
+    }
+
+    public AudioClip GetSound(CharacterState cs)
+    {
+        return soundMapping[cs];
     }
 
     Dictionary<CharacterState, BrainAbstract> brainStore;
@@ -47,5 +53,15 @@ public class BrainMapping
         colorMapping[CharacterState.ZOMBIE] =   Color.green;
         colorMapping[CharacterState.FEAR] =     Color.blue;
         colorMapping[CharacterState.COURAGE] =  Color.yellow;
+    }
+
+    Dictionary<CharacterState, AudioClip> soundMapping;
+    void GenerateSoundMapping()
+    {
+        soundMapping = new Dictionary<CharacterState, AudioClip>();
+        soundMapping[CharacterState.NEUTRAL] = (AudioClip)Resources.Load("Audio/Sounds/HeyM");
+        soundMapping[CharacterState.ZOMBIE] = (AudioClip)Resources.Load("Audio/Sounds/zombie");
+        soundMapping[CharacterState.FEAR] = (AudioClip)Resources.Load("Audio/Sounds/ScaredM");
+        soundMapping[CharacterState.COURAGE] = (AudioClip)Resources.Load("Audio/Sounds/HeyM");
     }
 }

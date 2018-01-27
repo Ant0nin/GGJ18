@@ -14,7 +14,6 @@ public class BrainCourage : BrainAbstract
 
     public override void Plug(CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
-        
     }
 
     public override void TriggerEndDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)

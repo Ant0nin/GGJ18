@@ -25,6 +25,8 @@ public class CharacterAI : MonoBehaviour {
             brain = store.GetBrain(value);
             brain.Plug(this, rb, anim);
 
+            AudioClip sound = store.GetSound(state);
+            audioSrc.clip = sound;
             audioSrc.Play();
         }
     }
