@@ -40,4 +40,9 @@ public class CharacterAI : MonoBehaviour {
         brain.UpdateDelegate(this, rb, anim);
         anim.SetFloat("speed", Vector3.Magnitude(rb.velocity));
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
 }
