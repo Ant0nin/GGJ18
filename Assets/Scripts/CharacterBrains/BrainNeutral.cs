@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BrainNeutral : BrainAbstract
 {
-    float speed = 6f;
     bool goLeft = true;
+    protected float speed = CharacterAI.speedWalk;
 
     public override void TriggerEnterDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
-        if (col.tag == "Edge" || col.tag == "Wall")
+        if (col.tag == "Edge" || col.tag == "Wall") // Warning (bug): occurs sometimes when a light ray hits the character
         {
             changeWalkDir(ai);
         }
@@ -44,8 +44,7 @@ public class BrainNeutral : BrainAbstract
     {
 
     }
-
-
+    
     public override void TriggerEndDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
     }

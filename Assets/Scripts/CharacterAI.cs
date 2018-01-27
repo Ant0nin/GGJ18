@@ -13,6 +13,9 @@ public class CharacterAI : MonoBehaviour {
     public readonly static Vector2 bcSizeCrouch = new Vector2(9.732243f, 3.714237f);
     public readonly static Vector2 bcOffsetCrouch = new Vector2(-0.1036626f, -0.50000f);
 
+    public readonly static float speedWalk = 6f;
+    public readonly static float speedRun = 15f;
+
     SpriteRenderer sprRender;
     Rigidbody2D rb;
     Animator anim;
