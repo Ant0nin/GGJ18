@@ -13,6 +13,7 @@ public class CharacterAI : MonoBehaviour {
     BrainAbstract brain;
     GeneralMapping store;
     AudioSource audioSrc;
+    Collider2D coll;
 
     public CharacterState State
     {
@@ -20,10 +21,10 @@ public class CharacterAI : MonoBehaviour {
         set {
             if (value == state) return;
 
-            brain.Unplug(this, rb, anim);
+            brain.Unplug(coll, this, rb, anim);
             state = value;
             brain = store.GetBrain(value);
-            brain.Plug(this, rb, anim);
+            brain.Plug(coll, this, rb, anim);
 
             AudioClip sound = store.GetSound(state);
             audioSrc.clip = sound;
@@ -38,14 +39,15 @@ public class CharacterAI : MonoBehaviour {
         anim = GetComponent<Animator>();
         sprRender = GetComponent<SpriteRenderer>();
         audioSrc = GetComponent<AudioSource>();
+        coll = GetComponent<Collider2D>();
 
         state = (state == 0 ? CharacterState.NEUTRAL : state);
         brain = store.GetBrain(state);
-        brain.Plug(this, rb, anim);
+        brain.Plug(coll, this, rb, anim);
     }
     
 	void Update () {
-        brain.UpdateDelegate(this, rb, anim);
+        brain.UpdateDelegate(coll, this, rb, anim);
         anim.SetFloat("speed", Vector3.Magnitude(rb.velocity));
         sprRender.color = store.GetColor(state);
     }

@@ -15,7 +15,7 @@ public class BrainNeutral : BrainAbstract
         }
     }
 
-    public override void UpdateDelegate(CharacterAI ai, Rigidbody2D rb, Animator anim)
+    public override void UpdateDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
         if (goLeft) // go left
         {
@@ -45,7 +45,7 @@ public class BrainNeutral : BrainAbstract
 
     }
 
-    public override void Plug(CharacterAI ai, Rigidbody2D rb, Animator anim)
+    public override void Plug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
         
     }
@@ -54,7 +54,7 @@ public class BrainNeutral : BrainAbstract
     {
     }
 
-    public override void Unplug(CharacterAI ai, Rigidbody2D rb, Animator anim)
+    public override void Unplug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
         
     }
