@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class CharacterAI : MonoBehaviour {
 
-    private Rigidbody rb;
+    private Rigidbody2D rb;
+    private Animator anim;
 
 	void Start () {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 	}
 	
 	void Update () {
-		
-	}
+        anim.SetFloat("speed", Vector3.Magnitude(rb.velocity));
+    }
 }

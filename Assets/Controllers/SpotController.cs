@@ -13,10 +13,10 @@ public class SpotController : MonoBehaviour {
     private void OnMouseDrag()
     {
         Vector2 viewportMousePos = cam.ScreenToViewportPoint(Input.mousePosition);
-        Vector2 cursorPos = 0.5f * viewportMousePos + new Vector2(0.5f, 0.5f); // [-1;1]
-        Vector2 spotPos = cam.WorldToViewportPoint(transform.position);
+        Vector2 cursorPos = viewportMousePos;                           // [0;1]
+        Vector2 spotPos = cam.WorldToViewportPoint(transform.position); // [0;1]
         Vector2 dir = Vector3.Normalize(cursorPos - spotPos);
-        Quaternion orient = Quaternion.LookRotation(dir);
+        Quaternion orient = Quaternion.FromToRotation(Vector2.down, dir);
         transform.rotation = orient;
     }
 }
