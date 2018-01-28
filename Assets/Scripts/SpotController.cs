@@ -16,6 +16,9 @@ public class SpotController : MonoBehaviour
     void Start () {
         cam = Camera.allCameras[0];
         spotDir = Vector2.down;
+
+        SpriteRenderer sprRender = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        sprRender.color = GeneralMapping.GetInstance().GetColor((CharacterState)effect);
     }
 	
     private void OnMouseDrag()
