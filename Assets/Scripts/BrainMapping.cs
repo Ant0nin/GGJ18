@@ -51,7 +51,7 @@ public class GeneralMapping
         colorMapping = new Dictionary<CharacterState, Color>();
         colorMapping[CharacterState.NEUTRAL] =  Color.white;
         colorMapping[CharacterState.ZOMBIE] =   Color.green;
-        colorMapping[CharacterState.FEAR] =     Color.blue;
+        colorMapping[CharacterState.FEAR] =     Color.cyan;
         colorMapping[CharacterState.COURAGE] =  Color.yellow;
     }
 
