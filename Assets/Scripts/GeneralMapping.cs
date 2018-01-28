@@ -50,7 +50,7 @@ public class GeneralMapping
     {
         colorMapping = new Dictionary<CharacterState, Color>();
         colorMapping[CharacterState.NEUTRAL] =  Color.white;
-        colorMapping[CharacterState.ZOMBIE] =   Color.green;
+        colorMapping[CharacterState.ZOMBIE] =   new Color(0.3f, 0.7f, 0.3f);
         colorMapping[CharacterState.FEAR] =     Color.magenta;
         colorMapping[CharacterState.COURAGE] =  Color.yellow;
     }
