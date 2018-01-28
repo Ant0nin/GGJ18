@@ -9,6 +9,7 @@ public class BrainZombie : BrainNeutral
         BoxCollider2D collider = (BoxCollider2D)col;
         collider.size = CharacterAI.bcSizeCrouch;
         collider.offset = CharacterAI.bcOffsetCrouch;
+        anim.SetBool("isCrouch", true);
     }
 
     public override void Unplug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
@@ -16,5 +17,6 @@ public class BrainZombie : BrainNeutral
         BoxCollider2D collider = (BoxCollider2D)col;
         collider.size = CharacterAI.bcSizeStand;
         collider.offset = CharacterAI.bcOffsetStand;
+        anim.SetBool("isCrouch", false);
     }
 }

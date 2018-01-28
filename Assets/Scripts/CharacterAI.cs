@@ -7,11 +7,11 @@ public class CharacterAI : MonoBehaviour {
     [SerializeField]
     CharacterState state = CharacterState.NEUTRAL;
 
-    public readonly static Vector2 bcSizeStand = new Vector2(3.714237f, 9.732243f);
     public readonly static Vector2 bcOffsetStand = new Vector2(-0.1036626f, 0.3471451f);
+    public readonly static Vector2 bcSizeStand = new Vector2(3.714237f, 9.732243f);
 
-    public readonly static Vector2 bcSizeCrouch = new Vector2(9.732243f, 3.714237f);
-    public readonly static Vector2 bcOffsetCrouch = new Vector2(-0.1036626f, -0.50000f);
+    public readonly static Vector2 bcOffsetCrouch = new Vector2(-0.1634126f, -0.4449854f);
+    public readonly static Vector2 bcSizeCrouch = new Vector2(6.642018f, 4.704472f);
 
     public readonly static float speedWalk = 6f;
     public readonly static float speedRun = 15f;

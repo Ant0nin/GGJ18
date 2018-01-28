@@ -27,9 +27,6 @@ public class AudioManager : MonoBehaviour {
                 apf.cutoffFrequency = 22000f;
             else
                 apf.cutoffFrequency = frequencyCoef * (1.0f/(dist*distCoef));
-
-            // TODO: remove log
-            Debug.Log(apf.name + " " + apf.cutoffFrequency);
         }
     }
 }
