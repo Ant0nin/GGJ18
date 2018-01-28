@@ -11,7 +11,7 @@ public class GoToEnding : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            //Destroy(collision.gameObject);
+            Destroy(GameObject.Find("CameraController"));
             IEnumerator coroutine = GoToEndScene();
             StartCoroutine(coroutine);
         }
