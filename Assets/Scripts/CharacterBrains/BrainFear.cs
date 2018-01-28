@@ -26,6 +26,4 @@ public class BrainFear : BrainNeutral
             );
         }
     }
-
-    // TODO: se retourner juste de maniere visuelle (negative scale)
 }

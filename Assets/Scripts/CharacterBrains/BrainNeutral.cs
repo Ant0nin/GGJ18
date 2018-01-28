@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BrainNeutral : BrainAbstract
 {
-    bool goLeft = true;
+    protected bool goLeft = true;
     protected float speed = CharacterAI.speedWalk;
 
     public override void TriggerEnterDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
