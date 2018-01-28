@@ -8,6 +8,13 @@ public class SpotController : MonoBehaviour
 
     Camera cam;
     Vector2 spotDir;
+    GameObject goSpotEnabled;
+    GameObject goBeam;
+    bool isUsedByPlayer = false;
+
+    public bool IsUsedByPlayer {
+        get { return isUsedByPlayer; }
+    }
 
     public Vector2 SpotDir {
         get { return spotDir; }
@@ -16,14 +23,33 @@ public class SpotController : MonoBehaviour
     void Start () {
         cam = Camera.allCameras[0];
         spotDir = Vector2.down;
+        goSpotEnabled = transform.GetChild(0).gameObject;
+        goBeam = transform.GetChild(2).gameObject;
 
         Color color = GeneralMapping.GetInstance().GetColor((CharacterState)effect);
         SpriteRenderer sprRenderSpot = transform.GetChild(0).GetComponent<SpriteRenderer>();
         SpriteRenderer sprRenderBeam = transform.GetChild(2).GetComponent<SpriteRenderer>();
         sprRenderSpot.color = color;
         sprRenderBeam.color = color;
+
+        goSpotEnabled.SetActive(false);
+        goBeam.SetActive(false);
     }
-	
+
+    private void OnMouseDown()
+    {
+        goSpotEnabled.SetActive(true);
+        goBeam.SetActive(true);
+        isUsedByPlayer = true;
+    }
+
+    private void OnMouseUp()
+    {
+        goSpotEnabled.SetActive(false);
+        goBeam.SetActive(false);
+        isUsedByPlayer = false;
+    }
+
     private void OnMouseDrag()
     {
         Vector2 viewportMousePos = cam.ScreenToViewportPoint(Input.mousePosition);

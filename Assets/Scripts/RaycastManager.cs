@@ -22,6 +22,9 @@ public class RaycastManager : MonoBehaviour {
     {
 		foreach(SpotController s in allLightSpots)
         {
+            if (!s.IsUsedByPlayer)
+                continue;
+
             RaycastHit2D hit = Physics2D.Raycast(s.transform.position, s.SpotDir, raycastMaxDist, raycastLayerMask);
             Debug.DrawRay(s.transform.position, s.SpotDir);
             if (hit.collider != null && hit.collider.gameObject.tag == "Player")
