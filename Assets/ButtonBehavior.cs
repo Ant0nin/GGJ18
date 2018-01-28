@@ -24,43 +24,32 @@ public class ButtonBehavior : MonoBehaviour {
     {
         if(state == true) // on
             timeCounterOn += Time.deltaTime;
-    }
 
-    private void LateUpdate()
-    {
-        if(timeCounterOn > timeBeforeCloseAction)
+        if (timeCounterOn > timeBeforeCloseAction) {
+            targetDoor.CloseDoor();
             SwitchOff();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         // TODO: trigger sound
         SwitchOn();
-
-        StartCoroutine(OpenDoorThenClose());
-    }
-
-    IEnumerator OpenDoorThenClose()
-    {
-        yield return new WaitForSeconds(timeBeforeCloseAction);
-        if (state == true) // on
-            SwitchOff();
+        targetDoor.OpenDoor();
     }
 
     void SwitchOn()
     {
-        targetDoor.OpenDoor();
         state = true; // on
+        timeCounterOn = 0f;
         buttonOn.SetActive(true);
         buttonOff.SetActive(false);
     }
 
     void SwitchOff()
     {
-        targetDoor.CloseDoor();
         state = false; // off
         buttonOff.SetActive(true);
         buttonOn.SetActive(false);
-        timeCounterOn = 0f;
     }
 }
