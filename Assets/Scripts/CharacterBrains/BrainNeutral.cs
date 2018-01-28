@@ -30,10 +30,21 @@ public class BrainNeutral : BrainAbstract
     protected void changeWalkDir(CharacterAI ai)
     {
         goLeft = !goLeft;
-        ai.transform.localScale = new Vector3(
-            ai.transform.localScale.x * -1.0f,
-            ai.transform.localScale.y
-        );
+
+        if(goLeft)
+        {
+            ai.transform.localScale = new Vector3(
+                Mathf.Abs(ai.transform.localScale.x),
+                ai.transform.localScale.y
+            );
+        }
+        else
+        {
+            ai.transform.localScale = new Vector3(
+                -Mathf.Abs(ai.transform.localScale.x),
+                ai.transform.localScale.y
+            );
+        }
     }
 
     public override void CollisionEndDelegate(Collision2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)

@@ -20,9 +20,13 @@ public class BrainCourage : BrainNeutral
     {
         if(jumpMode)
         {
-            rb.velocity = new Vector2(3f, 6f);
+            if (goLeft)
+                rb.velocity = new Vector2(-3f, 5f);
+            else
+                rb.velocity = new Vector2(3f, 5f);
+
             jumpFrameCount++;
-            if (jumpFrameCount >= 10) {
+            if (jumpFrameCount >= 15) {
                 jumpMode = false;
                 jumpFrameCount = 0;
             }
