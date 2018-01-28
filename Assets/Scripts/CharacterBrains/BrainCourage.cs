@@ -25,9 +25,9 @@ public class BrainCourage : BrainNeutral
         if(frameCount >= 100)
         {
             if (goLeft)
-                rb.AddForce(new Vector2(-300f, 250f));
+                rb.AddForce(new Vector2(-250f, 250f));
             else
-                rb.AddForce(new Vector2(300f, 250f));
+                rb.AddForce(new Vector2(250f, 250f));
             frameCount = 0;
         }           
     }

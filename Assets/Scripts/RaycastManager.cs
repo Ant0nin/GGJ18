@@ -12,7 +12,7 @@ public class RaycastManager : MonoBehaviour {
     Dictionary<CharacterAI, CharacterState> tempBase;
 
 	void Start () {
-        GameObject go = GameObject.Find("Gameplay");
+        GameObject go = GameObject.Find("Spotlights");
         allLightSpots = go.GetComponentsInChildren<SpotController>();
         raycastLayerMask = LayerMask.GetMask("Characters", "Mirrors", "Obstruders", "Filters");
         tempBase = new Dictionary<CharacterAI, CharacterState>();
