@@ -59,8 +59,8 @@ public class GeneralMapping
     void GenerateSoundMapping()
     {
         soundMapping = new Dictionary<CharacterState, AudioClip>();
-        soundMapping[CharacterState.NEUTRAL] = (AudioClip)Resources.Load("Audio/Sounds/HeyM");
-        soundMapping[CharacterState.ZOMBIE] = (AudioClip)Resources.Load("Audio/Sounds/zombie");
+        soundMapping[CharacterState.NEUTRAL] = (AudioClip)Resources.Load("Audio/Sounds/HeyMen");
+        soundMapping[CharacterState.ZOMBIE] = (AudioClip)Resources.Load("Audio/Sounds/zombie2");
         soundMapping[CharacterState.FEAR] = (AudioClip)Resources.Load("Audio/Sounds/ScaredM");
         soundMapping[CharacterState.COURAGE] = (AudioClip)Resources.Load("Audio/Sounds/HeyM");
     }
