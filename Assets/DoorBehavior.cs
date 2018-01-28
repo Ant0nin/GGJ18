@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorBehavior : MonoBehaviour {
 
+    public GameObject associatedWallPrevent;
+
     GameObject doorClosed;
     GameObject doorOpen;
     BoxCollider2D boxCollider;
@@ -20,6 +22,8 @@ public class DoorBehavior : MonoBehaviour {
         doorOpen.SetActive(true);
         doorClosed.SetActive(false);
         boxCollider.enabled = false;
+        if (associatedWallPrevent)
+            associatedWallPrevent.SetActive(false);
     }
 
     public void CloseDoor()
@@ -28,5 +32,7 @@ public class DoorBehavior : MonoBehaviour {
         doorOpen.SetActive(false);
         doorClosed.SetActive(true);
         boxCollider.enabled = true;
+        if (associatedWallPrevent)
+            associatedWallPrevent.SetActive(true);
     }
 }
