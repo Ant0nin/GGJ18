@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BrainCourage : BrainNeutral
 {
-    private bool jumpMode = false;
-    private uint jumpFrameCount = 0;
-    private uint switchFrameCount = 0;
+    private uint frameCount;
+
+    public override void Plug(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
+    {
+        frameCount = 100;
+    }
 
     public override void TriggerEnterDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
@@ -18,28 +21,14 @@ public class BrainCourage : BrainNeutral
 
     public override void UpdateDelegate(Collider2D col, CharacterAI ai, Rigidbody2D rb, Animator anim)
     {
-        if(jumpMode)
+        frameCount++;
+        if(frameCount >= 100)
         {
             if (goLeft)
-                rb.velocity = new Vector2(-3f, 5f);
+                rb.AddForce(new Vector2(-300f, 250f));
             else
-                rb.velocity = new Vector2(3f, 5f);
-
-            jumpFrameCount++;
-            if (jumpFrameCount >= 15) {
-                jumpMode = false;
-                jumpFrameCount = 0;
-            }
-        }
-        else
-        {
-            base.UpdateDelegate(col, ai, rb, anim);
-
-            switchFrameCount++;
-            if(switchFrameCount >= 200) {
-                jumpMode = true;
-                switchFrameCount = 0;
-            }
-        }
+                rb.AddForce(new Vector2(300f, 250f));
+            frameCount = 0;
+        }           
     }
 }
