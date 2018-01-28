@@ -5,4 +5,5 @@ using UnityEngine;
 public class ZoneMarker : MonoBehaviour {
 
     public float weight = 1.0f;
+    public uint levelNumber;
 }
